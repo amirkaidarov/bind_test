@@ -1,0 +1,14 @@
+{
+    "id": "id1",
+    "currency": "dollar",
+    "currentAmount": 180970.83,
+    "transactions": [
+        {
+            "id": "tId1",
+            "senderOrRecipient": "Pret A Manger",
+            "isIncoming": false,
+            "amount": 55.31,
+            "dateTime": "2022-06-19T12:23:21.343959"
+        }
+    ]
+}
