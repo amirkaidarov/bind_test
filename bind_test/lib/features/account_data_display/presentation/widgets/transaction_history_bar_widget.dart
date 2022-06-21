@@ -31,6 +31,16 @@ class TransactionHistoryBar extends StatelessWidget {
   final String initialCurrency;
   final String initialSomeOtherOption;
 
+  String mapShortToFullCurrency(String shortCurrency) {
+    const Map<String, String> shortToFullMap = {
+      'USD': 'USD Dollar',
+      'EUR': 'EUR Euro',
+      'JPY': 'JPY Japanese yen',
+      'GBP': 'GBP Pound sterling',
+    };
+    return shortToFullMap[shortCurrency] as String;
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -82,7 +92,7 @@ class TransactionHistoryBar extends StatelessWidget {
                     ),
                   ),
                   isExpanded: true,
-                  value: '$selectedCurrency Dollar',
+                  value: mapShortToFullCurrency(initialCurrency),
                   style: TextStyle(
                     fontSize: 14,
                     color: theme.scaffoldBackgroundColor,

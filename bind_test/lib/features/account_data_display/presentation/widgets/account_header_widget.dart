@@ -15,6 +15,13 @@ class AccountHeader extends StatelessWidget {
   final String currency;
   final String someOtherOption;
 
+  String mapCurrencyToAccountIcon(String currency) {
+    const Map<String, String> currencyToIconMap = {
+      'USD': 'assets/images/usa_flag.png'
+    };
+    return currencyToIconMap[currency] as String;
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -26,9 +33,11 @@ class AccountHeader extends StatelessWidget {
       child: Center(
         child: Column(
           children: [
-            const CircleAvatar(
+            CircleAvatar(
               radius: 35,
-              foregroundImage: AssetImage('assets/images/usa_flag.png'),
+              foregroundImage: AssetImage(
+                mapCurrencyToAccountIcon(bankAccountData.currency),
+              ),
             ),
             Row(
               mainAxisSize: MainAxisSize.min,
