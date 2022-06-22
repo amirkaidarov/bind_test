@@ -58,7 +58,7 @@ class TransactionTile extends StatelessWidget {
           ),
         ),
         subtitle: Text(
-          transaction.dateTime.substring(11, 16),
+          transaction.dateTime.toString().substring(11, 16),
           style: const TextStyle(
             fontSize: 12,
           ),

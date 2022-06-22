@@ -26,7 +26,7 @@ abstract class TransactionModel implements _$TransactionModel {
       senderOrRecipientIcon: senderOrRecipientIcon,
       isIncoming: isIncoming,
       amount: amount,
-      dateTime: dateTime,
+      dateTime: DateTime.parse(dateTime),
     );
   }
 

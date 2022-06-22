@@ -77,19 +77,11 @@ class TransactionHistoryBar extends StatelessWidget {
                   buttonDecoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
-                      color: theme.scaffoldBackgroundColor,
+                      color: theme.colorScheme.tertiary,
                     ),
                   ),
-                  decoration: InputDecoration(
-                    isDense: true,
+                  decoration: const InputDecoration(
                     contentPadding: EdgeInsets.zero,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        width: 1,
-                        color: theme.scaffoldBackgroundColor,
-                      ),
-                    ),
                   ),
                   isExpanded: true,
                   value: mapShortToFullCurrency(initialCurrency),
@@ -108,7 +100,7 @@ class TransactionHistoryBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                     color: theme.colorScheme.primary,
                     border: Border.all(
-                      color: Colors.white,
+                      color: theme.colorScheme.tertiary,
                     ),
                   ),
                   items: currencies
@@ -141,19 +133,11 @@ class TransactionHistoryBar extends StatelessWidget {
                         buttonDecoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(
-                            color: theme.scaffoldBackgroundColor,
+                            color: theme.colorScheme.tertiary,
                           ),
                         ),
-                        decoration: InputDecoration(
-                          isDense: true,
+                        decoration: const InputDecoration(
                           contentPadding: EdgeInsets.zero,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide(
-                              width: 1,
-                              color: theme.scaffoldBackgroundColor,
-                            ),
-                          ),
                         ),
                         isExpanded: true,
                         value: selectedOtherOption,
@@ -166,13 +150,16 @@ class TransactionHistoryBar extends StatelessWidget {
                         ),
                         iconSize: 30,
                         buttonHeight: 50,
-                        buttonPadding:
-                            const EdgeInsets.only(left: 20, right: 10),
+                        dropdownMaxHeight: 150,
+                        buttonPadding: const EdgeInsets.only(
+                          left: 20,
+                          right: 10,
+                        ),
                         dropdownDecoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: theme.colorScheme.primary,
                           border: Border.all(
-                            color: Colors.white,
+                            color: theme.colorScheme.tertiary,
                           ),
                         ),
                         items: someOtherOptions

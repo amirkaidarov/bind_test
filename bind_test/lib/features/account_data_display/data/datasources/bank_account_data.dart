@@ -55,7 +55,7 @@ String getBankAccountDataString() {
             "isPerson": false,
             "senderOrRecipientIcon": "assets/images/virgin_logo.jpeg",
             "isIncoming": false,
-            "amount": 55.31,
+            "amount": 500.31,
             "dateTime": "2021-12-11T12:23:21.343959"
         },
         {
@@ -64,7 +64,7 @@ String getBankAccountDataString() {
             "isPerson": false,
             "senderOrRecipientIcon": "assets/images/nike_logo.jpeg",
             "isIncoming": false,
-            "amount": 55.31,
+            "amount": 500.31,
             "dateTime": "2021-12-11T12:23:21.343958"
         },
         {
@@ -73,7 +73,7 @@ String getBankAccountDataString() {
             "isPerson": false,
             "senderOrRecipientIcon": "assets/images/lv_logo.png",
             "isIncoming": false,
-            "amount": 55.31,
+            "amount": 500.31,
             "dateTime": "2021-12-09T12:23:21.343959"
         },
         {
@@ -82,7 +82,7 @@ String getBankAccountDataString() {
             "isPerson": false,
             "senderOrRecipientIcon": "assets/images/carrefour_logo.png",
             "isIncoming": false,
-            "amount": 55.31,
+            "amount": 500.31,
             "dateTime": "2021-12-09T12:23:21.343958"
         }
     ]

@@ -19,13 +19,14 @@ ThemeData lightThemeData(BuildContext context) {
         ),
         side: const BorderSide(
           width: 1,
-          color: kSecondaryColor,
+          color: kTertiaryColor,
         ),
       ),
     ),
     colorScheme: const ColorScheme.light(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,
+      tertiary: kTertiaryColor,
     ),
   );
 }

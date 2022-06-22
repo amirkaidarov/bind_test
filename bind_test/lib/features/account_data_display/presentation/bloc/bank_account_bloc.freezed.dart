@@ -224,7 +224,7 @@ mixin _$BankAccountState {
     required TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)
         loaded,
-    required TResult Function() failed,
+    required TResult Function(String message) failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -233,7 +233,7 @@ mixin _$BankAccountState {
     TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)?
         loaded,
-    TResult Function()? failed,
+    TResult Function(String message)? failed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -242,7 +242,7 @@ mixin _$BankAccountState {
     TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)?
         loaded,
-    TResult Function()? failed,
+    TResult Function(String message)? failed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -331,7 +331,7 @@ class _$_Loading implements _Loading {
     required TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)
         loaded,
-    required TResult Function() failed,
+    required TResult Function(String message) failed,
   }) {
     return loading();
   }
@@ -343,7 +343,7 @@ class _$_Loading implements _Loading {
     TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)?
         loaded,
-    TResult Function()? failed,
+    TResult Function(String message)? failed,
   }) {
     return loading?.call();
   }
@@ -355,7 +355,7 @@ class _$_Loading implements _Loading {
     TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)?
         loaded,
-    TResult Function()? failed,
+    TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -500,7 +500,7 @@ class _$_Loaded implements _Loaded {
     required TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)
         loaded,
-    required TResult Function() failed,
+    required TResult Function(String message) failed,
   }) {
     return loaded(bankAccountData, currency, someOtherOption);
   }
@@ -512,7 +512,7 @@ class _$_Loaded implements _Loaded {
     TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)?
         loaded,
-    TResult Function()? failed,
+    TResult Function(String message)? failed,
   }) {
     return loaded?.call(bankAccountData, currency, someOtherOption);
   }
@@ -524,7 +524,7 @@ class _$_Loaded implements _Loaded {
     TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)?
         loaded,
-    TResult Function()? failed,
+    TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -584,6 +584,7 @@ abstract class _Loaded implements BankAccountState {
 abstract class _$$_FailedCopyWith<$Res> {
   factory _$$_FailedCopyWith(_$_Failed value, $Res Function(_$_Failed) then) =
       __$$_FailedCopyWithImpl<$Res>;
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -594,26 +595,49 @@ class __$$_FailedCopyWithImpl<$Res> extends _$BankAccountStateCopyWithImpl<$Res>
 
   @override
   _$_Failed get _value => super._value as _$_Failed;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$_Failed(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Failed implements _Failed {
-  const _$_Failed();
+  const _$_Failed(this.message);
+
+  @override
+  final String message;
 
   @override
   String toString() {
-    return 'BankAccountState.failed()';
+    return 'BankAccountState.failed(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Failed);
+        (other.runtimeType == runtimeType &&
+            other is _$_Failed &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_FailedCopyWith<_$_Failed> get copyWith =>
+      __$$_FailedCopyWithImpl<_$_Failed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -622,9 +646,9 @@ class _$_Failed implements _Failed {
     required TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)
         loaded,
-    required TResult Function() failed,
+    required TResult Function(String message) failed,
   }) {
-    return failed();
+    return failed(message);
   }
 
   @override
@@ -634,9 +658,9 @@ class _$_Failed implements _Failed {
     TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)?
         loaded,
-    TResult Function()? failed,
+    TResult Function(String message)? failed,
   }) {
-    return failed?.call();
+    return failed?.call(message);
   }
 
   @override
@@ -646,11 +670,11 @@ class _$_Failed implements _Failed {
     TResult Function(BankAccount bankAccountData, String currency,
             String someOtherOption)?
         loaded,
-    TResult Function()? failed,
+    TResult Function(String message)? failed,
     required TResult orElse(),
   }) {
     if (failed != null) {
-      return failed();
+      return failed(message);
     }
     return orElse();
   }
@@ -691,5 +715,10 @@ class _$_Failed implements _Failed {
 }
 
 abstract class _Failed implements BankAccountState {
-  const factory _Failed() = _$_Failed;
+  const factory _Failed(final String message) = _$_Failed;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_FailedCopyWith<_$_Failed> get copyWith =>
+      throw _privateConstructorUsedError;
 }

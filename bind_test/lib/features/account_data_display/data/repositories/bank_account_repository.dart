@@ -10,7 +10,8 @@ class BankAccountRepository implements IBankAccountRepository {
 
   @override
   Future<BankAccount> getBankAccountData(String id) async {
-    final bankAccount = await dataSource.getBankAccountData();
+    final bankAccountModel = await dataSource.getBankAccountData();
+    final bankAccount = bankAccountModel.toDomain();
     return bankAccount;
   }
 }

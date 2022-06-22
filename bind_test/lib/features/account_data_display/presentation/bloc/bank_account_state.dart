@@ -8,5 +8,5 @@ class BankAccountState with _$BankAccountState {
     String currency,
     String someOtherOption,
   ) = _Loaded;
-  const factory BankAccountState.failed() = _Failed;
+  const factory BankAccountState.failed(String message) = _Failed;
 }

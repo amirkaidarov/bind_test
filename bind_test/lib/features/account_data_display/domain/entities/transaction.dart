@@ -14,7 +14,7 @@ abstract class Transaction implements _$Transaction {
       required String senderOrRecipientIcon,
       required bool isIncoming,
       required double amount,
-      required String dateTime,
+      required DateTime dateTime,
       }) = _Transaction;
 
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,12 +16,12 @@ class AccountDataDisplayPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.arrow_back_rounded),
+          icon: const Icon(CupertinoIcons.arrow_left),
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.logout_rounded),
+            icon: const Icon(CupertinoIcons.arrow_left ),
           )
         ],
       ),
@@ -43,7 +44,7 @@ class AccountDataDisplayPage extends StatelessWidget {
             loading: (s) => const Center(
               child: CircularProgressIndicator(),
             ),
-            failed: (s) => Container(),
+            failed: (s) => const SizedBox(),
           );
         },
       ),

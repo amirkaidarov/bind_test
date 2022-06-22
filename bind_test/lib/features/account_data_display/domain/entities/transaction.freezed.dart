@@ -22,7 +22,7 @@ mixin _$Transaction {
   String get senderOrRecipientIcon => throw _privateConstructorUsedError;
   bool get isIncoming => throw _privateConstructorUsedError;
   double get amount => throw _privateConstructorUsedError;
-  String get dateTime => throw _privateConstructorUsedError;
+  DateTime get dateTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TransactionCopyWith<Transaction> get copyWith =>
@@ -41,7 +41,7 @@ abstract class $TransactionCopyWith<$Res> {
       String senderOrRecipientIcon,
       bool isIncoming,
       double amount,
-      String dateTime});
+      DateTime dateTime});
 }
 
 /// @nodoc
@@ -90,7 +90,7 @@ class _$TransactionCopyWithImpl<$Res> implements $TransactionCopyWith<$Res> {
       dateTime: dateTime == freezed
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ));
   }
 }
@@ -109,7 +109,7 @@ abstract class _$$_TransactionCopyWith<$Res>
       String senderOrRecipientIcon,
       bool isIncoming,
       double amount,
-      String dateTime});
+      DateTime dateTime});
 }
 
 /// @nodoc
@@ -160,7 +160,7 @@ class __$$_TransactionCopyWithImpl<$Res> extends _$TransactionCopyWithImpl<$Res>
       dateTime: dateTime == freezed
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
     ));
   }
 }
@@ -191,7 +191,7 @@ class _$_Transaction extends _Transaction {
   @override
   final double amount;
   @override
-  final String dateTime;
+  final DateTime dateTime;
 
   @override
   String toString() {
@@ -240,7 +240,7 @@ abstract class _Transaction extends Transaction {
       required final String senderOrRecipientIcon,
       required final bool isIncoming,
       required final double amount,
-      required final String dateTime}) = _$_Transaction;
+      required final DateTime dateTime}) = _$_Transaction;
   const _Transaction._() : super._();
 
   @override
@@ -256,7 +256,7 @@ abstract class _Transaction extends Transaction {
   @override
   double get amount => throw _privateConstructorUsedError;
   @override
-  String get dateTime => throw _privateConstructorUsedError;
+  DateTime get dateTime => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_TransactionCopyWith<_$_Transaction> get copyWith =>

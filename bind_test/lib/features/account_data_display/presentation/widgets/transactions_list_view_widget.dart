@@ -34,19 +34,24 @@ class TransactionListView extends StatelessWidget {
     final theme = Theme.of(context).colorScheme;
 
     return GroupedListView<dynamic, String>(
+      physics: const BouncingScrollPhysics(
+        parent: AlwaysScrollableScrollPhysics(),
+      ),
       elements: bankAccountData.transactions,
-      groupBy: (transaction) => transaction.dateTime.substring(0, 10),
+      groupBy: (transaction) =>
+          transaction.dateTime.toString().substring(0, 10),
       groupComparator: (transaction1, transaction2) =>
           transaction2.compareTo(transaction1),
       itemComparator: (transaction1, transaction2) =>
-          transaction2.dateTime.compareTo(transaction1.dateTime),
+          (transaction2.dateTime.toString())
+              .compareTo(transaction1.dateTime.toString()),
       order: GroupedListOrder.ASC,
       useStickyGroupSeparators: true,
-      groupSeparatorBuilder: (String value) => Container(
+      groupSeparatorBuilder: (String transactionDateString) => Container(
         color: theme.secondary,
         padding: const EdgeInsets.all(20.0),
         child: Text(
-          getGroupTitle(value),
+          getGroupTitle(transactionDateString),
           textAlign: TextAlign.left,
           style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         ),
